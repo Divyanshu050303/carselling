@@ -1,16 +1,39 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class StartScreen extends StatelessWidget {
+class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
+
+  @override
+  State<StartScreen> createState() => _StartScreenState();
+}
+
+class _StartScreenState extends State<StartScreen> {
+  int _changeWithImage = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer.periodic(Duration(milliseconds: 3210), (Timer timer) {
+      setState(() {
+        _changeWithImage = _changeWithImage + 1;
+        if (_changeWithImage == 4) {
+          _changeWithImage = 0;
+        }
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     List<String> image = [
-      "assets/car1.png",
-      "assets/car2.png",
-      "assets/car3.png",
-      "assets/car4.png"
+      "assets/images/car1.png",
+      "assets/images/car3.png",
+      "assets/images/car2.png",
+      "assets/images/car4.png"
     ];
     MediaQueryData mediaQueryData = MediaQuery.of(context);
 
@@ -46,28 +69,50 @@ class StartScreen extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: CarouselSlider(
-              items: image.map(
-                (i) {
-                  return Builder(
-                    builder: (BuildContext context) => Image.asset(
-                      i,
-                      fit: BoxFit.cover,
-                      height: 200,
-                    ),
-                  );
-                },
-              ).toList(),
-              options: CarouselOptions(
-                viewportFraction: 1,
-                height: 270,
-              ),
+          CarouselSlider(
+            items: image.map(
+              (i) {
+                return Builder(
+                  builder: (BuildContext context) => Image.asset(
+                    i,
+                    fit: BoxFit.cover,
+                    height: 200,
+                  ),
+                );
+              },
+            ).toList(),
+            options: CarouselOptions(
+              autoPlayInterval: const Duration(seconds: 3),
+              autoPlay: true,
+              viewportFraction: 1,
+              height: 275,
             ),
           ),
-
-          SizedBox(height: mediaQueryData.size.height*0.15,),
+          SizedBox(
+            height: mediaQueryData.size.height * 0.08,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.fiber_manual_record,
+                color: _changeWithImage == 0 ? Colors.black : Colors.grey,
+                size: 16,
+              ),
+              Icon(Icons.fiber_manual_record,
+                  color: _changeWithImage == 1 ? Colors.black : Colors.grey,
+                  size: 16),
+              Icon(Icons.fiber_manual_record,
+                  color: _changeWithImage == 2 ? Colors.black : Colors.grey,
+                  size: 16),
+              Icon(Icons.fiber_manual_record,
+                  color: _changeWithImage == 3 ? Colors.black : Colors.grey,
+                  size: 16),
+            ],
+          ),
+          SizedBox(
+            height: mediaQueryData.size.height * 0.05,
+          ),
           Center(
             child: Container(
               width: mediaQueryData.size.width * 0.8,
