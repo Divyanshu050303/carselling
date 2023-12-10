@@ -17,17 +17,19 @@ class _HomeScreenState extends State<HomeScreen> {
     MediaQueryData mediaQueryData=MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      body: Column(
-        children: [
-          SizedBox(height: mediaQueryData.size.height*0.07,),
-          AppBar1(),
-          SizedBox(height: mediaQueryData.size.height*0.03,),
-          SearchBoxs(),
-          SizedBox(height: mediaQueryData.size.height*0.02,),
-          Category(),
-          SizedBox(height: mediaQueryData.size.height*0.05,),
-          CarList()
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: mediaQueryData.size.height*0.07,),
+            const AppBar1(),
+            SizedBox(height: mediaQueryData.size.height*0.03,),
+            const SearchBoxs(),
+            SizedBox(height: mediaQueryData.size.height*0.05,),
+            const Category(),
+              SizedBox(height: mediaQueryData.size.height*0.05,),
+            const CarList()
+          ],
+        ),
       ),
     );
   }
