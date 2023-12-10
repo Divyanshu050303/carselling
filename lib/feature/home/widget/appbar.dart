@@ -9,9 +9,12 @@ class AppBar1 extends StatelessWidget {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
+
           CircleAvatar(
           radius: 30,
-         
+        child:  ClipRRect(
+            borderRadius: BorderRadius.circular(25),
+            child: Image.asset("assets/images/divyanshu.png",fit: BoxFit.fill,)),
         ),
         const Padding(
           padding: EdgeInsets.only(right: 18.0),
