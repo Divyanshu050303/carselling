@@ -4,7 +4,8 @@ class Category extends StatelessWidget {
   const Category({super.key});
 
   @override
-  Widget build(BuildContext context) {List<Map<String, String>> category = [
+  Widget build(BuildContext context) {
+    List<Map<String, String>> category = [
       {"name": "Audi", "image": "assets/images/audi.png"},
       {"name": "BMW", "image": "assets/images/bmw.png"},
       {"name": "Bugatti", "image": "assets/images/bugatti.png"},
