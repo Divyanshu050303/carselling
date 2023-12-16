@@ -1,3 +1,4 @@
+import 'package:carselling/feature/profile/screen/profilescreen.dart';
 import 'package:flutter/material.dart';
 
 class AppBar1 extends StatelessWidget {
@@ -10,12 +11,19 @@ class AppBar1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
 
-          CircleAvatar(
-          radius: 30,
-        child:  ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.asset("assets/images/divyanshu.png",fit: BoxFit.fill,)),
-        ),
+          InkWell(
+            onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=> const ProfileScreen()));},
+            child: Hero(
+              tag: "ProfilePicture",
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+              radius: 30,
+                      child:  ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image.asset("assets/images/divyanshu.png",fit: BoxFit.fill,)),
+                      ),
+            ),
+          ),
         const Padding(
           padding: EdgeInsets.only(right: 18.0),
           child: Column(
