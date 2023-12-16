@@ -12,8 +12,8 @@ class AppBars extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            width: mediaQueryData.size.width * 0.15,
-            height: mediaQueryData.size.height * 0.07,
+            width: mediaQueryData.size.width * 0.13,
+            height: mediaQueryData.size.height * 0.06,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(100),
