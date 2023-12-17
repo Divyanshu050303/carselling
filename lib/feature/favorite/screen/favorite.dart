@@ -19,14 +19,14 @@ class _FavoriteState extends State<Favorite> {
       width: double.infinity,
       height: double.infinity,
       color: Colors.grey.shade300,
-      child: Column(
-        children: [
-          SizedBox(height: mediaQueryData.size.height*0.06,),
-          const AppBarFav(),
-          SizedBox(height: mediaQueryData.size.width*0.04,),
-          const FavoriteCard()
-
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: mediaQueryData.size.height*0.04,),
+            const AppBarFav(),
+            const FavoriteCard()
+          ],
+        ),
       ),
     );
   }
