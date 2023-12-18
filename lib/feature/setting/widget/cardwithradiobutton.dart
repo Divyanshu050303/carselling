@@ -15,7 +15,7 @@ class _CardWithButtonState extends State<CardWithButton> {
     MediaQueryData mediaQueryData=MediaQuery.of(context);
     return Container(
       padding: const EdgeInsets.only(left: 20),
-      width: mediaQueryData.size.width*0.85,
+      width: mediaQueryData.size.width*0.89,
       height: mediaQueryData.size.height*0.08,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -32,7 +32,9 @@ class _CardWithButtonState extends State<CardWithButton> {
       ),
       child: Row(
         children: [
-          CircleAvatar(child: Icon(widget.iconData, color: Colors.black,)),
+          CircleAvatar(
+              backgroundColor: Colors.grey.shade200,
+              child: Icon(widget.iconData, color: Colors.black,)),
           const SizedBox(width: 20,),
           Text(widget.title, style: const TextStyle(color: Colors.black, fontSize: 17, fontFamily: "Roboto",decoration: TextDecoration.none),),
           SizedBox(width: mediaQueryData.size.width*0.2,),
