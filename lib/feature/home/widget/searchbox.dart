@@ -11,13 +11,14 @@ class SearchBoxs extends StatelessWidget {
       return SizedBox(
         width: mediaQueryData.size.width*0.9,
         height: mediaQueryData.size.height*0.07,
-        child: const SearchBar(
+        child:    SearchBar(
+          backgroundColor:MaterialStateProperty.all(Colors.white),
           hintText: "Search your dream car...",
-          leading: Padding(
+          leading: const Padding(
             padding: EdgeInsets.only(left: 15.0),
             child: Icon(Icons.search, color: Colors.black,),
           ),
-          trailing: [
+          trailing: const [
             Padding(
               padding: EdgeInsets.only(right: 12.0),
               child: Icon(Icons.tune_outlined,color: Colors.black,),
