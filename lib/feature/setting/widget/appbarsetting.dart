@@ -28,7 +28,7 @@ class AppBars extends StatelessWidget {
           const Text(
             "Setting",
             style: TextStyle(
-              fontFamily: "Boboto",
+              fontFamily: "Roboto",
                 color: Colors.black,
                 fontSize: 20,
                 decoration: TextDecoration.none),
